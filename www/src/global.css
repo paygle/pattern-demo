@@ -1,0 +1,33 @@
+/* 这个文件不走 css modules，自动被引入，可以写一些全局样式，或者做一些样式覆盖 */
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+/* main body style */
+.m-banner {
+  width: 100%;
+  background-image: url(assets/screen.png);
+}
+.m-banner .bg-img {
+  width: 100%;
+}
+.m-banner .bg-img img {
+  width: 100%;
+}
+.m-banner .bgt-img {
+  position: absolute;
+  width: 25%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -11%;
+  bottom: 0;
+}
+.m-content {
+  width: 1200px;
+  margin: 0 auto;
+}
