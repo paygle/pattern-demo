@@ -1,6 +1,8 @@
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 import Header from './header'
+import Footer from './footer'
 import withRouter from 'umi/withRouter'
+import { connect } from 'dva'
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {
   LocaleProvider, Input
@@ -8,26 +10,37 @@ import {
 
 class Layout extends Component {
 
+  constructor(props) {
+    super(props)
+    this.layRef = createRef()
+  }
+
   componentDidMount() {
     console.log('mount')
   }
 
   render() {
-    const { children } = this.props
+    const { children, location } = this.props
 
     return (
-    <LocaleProvider locale={zhCN}>
-      <div className="body-wrapper">
-        <Header/>
-        {
-          children
-        }
-        <Input placeholder="Basic usage" />
-      </div>
+    <LocaleProvider locale={zhCN} ref={this.layRef}>
+    <>
+      <Header location={location} layRef={this.layRef}/>
+      {
+        children
+      }
+      <Footer/>
+      <Input placeholder="Basic usage" />
+    </>
     </LocaleProvider>
     )
   }
 
 }
 
-export default withRouter(Layout)
+// 绑定存储属性
+const mapStateToProps = ({globals}) => {
+  return { position: globals.position };
+};
+
+export default withRouter(connect(mapStateToProps)(Layout))

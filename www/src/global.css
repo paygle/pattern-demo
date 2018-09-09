@@ -14,6 +14,7 @@ body {
 }
 .m-banner .bg-img {
   width: 100%;
+  min-height: 80px;
 }
 .m-banner .bg-img img {
   width: 100%;

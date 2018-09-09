@@ -19,14 +19,16 @@
 .menus {
   float: right;
 }
-.menus > span {
+.menus > span,
+.menus > a {
   cursor: pointer;
   font-size: 16px;
   line-height: 60px;
   color: rgba(255, 255, 255, 0.6);
   padding: 10px 25px;
 }
-.menus > span:hover {
+.menus > span:hover,
+.menus > a:hover {
   color: rgba(7, 182, 243, 0.8);
 }
 .menus > .contact {
