@@ -9,9 +9,12 @@ class PatCard extends React.Component {
   }
 
   render() {
+    const { imgrc, title, content } = this.props
     return (
     <div className="patCard">
-      PatCard
+      <img src={imgrc}/>
+      <p>{ title }</p>
+      <div className="patCardContent">{content}</div>
     </div>
     )
   }

@@ -1,5 +1,7 @@
 /* 这个文件不走 css modules，自动被引入，可以写一些全局样式，或者做一些样式覆盖 */
 
+@primaryColor: #1eb9ee;
+
 html, body, #root {
   height: 100%;
 }
@@ -34,7 +36,112 @@ body {
   }
 }
 
+.news-more {
+  position: relative;
+  color: #fff;
+  height: 180px;
+  margin: 80px 0;
+  background-color: #333;
+
+  .rectFr {
+    position: absolute;
+    top: -50px;
+    width: 175px;
+    height: 275px;
+    border: 4px solid @primaryColor;
+  }
+
+  .news-title, .acticle-titile {
+    display: inline-block;
+    line-height: 180px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .news-title {
+    width: 175px;
+    font-size: 20px;
+  }
+
+  .acticle-titile {
+    height: 180px;
+    margin-left: -10px;
+    padding: 58px 0 0 68px;
+    color: white;
+    background-color: #333;
+    text-align: left;
+
+    & > span {
+      display: block;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+  }
+  .date {
+    position: relative;
+
+    em {
+      font-size: 28px;
+      padding-right: 20px;
+    }
+
+    i{
+      position: absolute;
+      top: -10px;
+      left: 80px;
+      border-right: 1px solid @primaryColor;
+      transform: rotate(30deg);
+      display: block;
+      width: 1px;
+      height: 48px;
+    }
+  }
+
+  .lkmore {
+    padding-top: 40px;
+    text-align: right;
+  }
+}
 .m-content {
   width: 1200px;
   margin: 0 auto;
+
+  .link-more {
+    display: inline-block;
+    width: 220px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    color: white;
+    border-radius: 10px;
+    margin: 30px 0;
+    background-color: @primaryColor;
+  }
+}
+
+.more-partner {
+  margin: 30px 0;
+  height: 160px;
+  background-color: #eee;
+
+  [class*=ant-col-] {
+    text-align: center;
+    padding-top: 55px;
+  }
+}
+
+.link-center {
+  text-align: center;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.patFooter{
+  width: 100%;
+  height: 600px;
+  color: white;
+  background-color: #333;
+
 }

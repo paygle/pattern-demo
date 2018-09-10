@@ -1,8 +1,8 @@
 import React from 'react'
-// import CSSModules from 'react-css-modules' // 免去多写一个styles前缀
-// import styles from './index.less'
+import CSSModules from 'react-css-modules' // 免去多写一个styles前缀
+import styles from './index.less'
 
-class PatCard extends React.Component {
+class PatCarousel extends React.Component {
 
   constructor(props) {
     super(props);
@@ -10,13 +10,24 @@ class PatCard extends React.Component {
   }
 
   render() {
+    const photos = [
+      {id: 1, imgrc: '/static/workcase.jpg'},
+      {id: 2, imgrc: '/static/workcase.jpg'},
+      {id: 3, imgrc: '/static/workcase.jpg'}
+    ]
+
     return (
-    <div className="patCard">
-      PatCard
+    <div styleName="PatCarousel">
+      <div styleName="line"></div>
+      <ul styleName="photoWrapper">
+        {
+          photos.map((photo) => <li key={photo.id}><img src={photo.imgrc}/></li>)
+        }
+      </ul>
     </div>
     )
   }
 
 }
 
-export default PatCard // CSSModules(PatCard, styles)
+export default CSSModules(PatCarousel, styles)

@@ -4,9 +4,7 @@ import Footer from './footer'
 import withRouter from 'umi/withRouter'
 import { connect } from 'dva'
 import zhCN from 'antd/lib/locale-provider/zh_CN';
-import {
-  LocaleProvider, Input
- } from 'antd'
+import { LocaleProvider } from 'antd'
 
 class Layout extends Component {
 
@@ -30,7 +28,6 @@ class Layout extends Component {
         children
       }
       <Footer/>
-      <Input placeholder="Basic usage" />
     </>
     </LocaleProvider>
     )

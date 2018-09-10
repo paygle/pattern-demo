@@ -9,6 +9,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "raf": "^3.4.0",
     "react-css-modules": "^4.7.7"
   },
   "devDependencies": {
