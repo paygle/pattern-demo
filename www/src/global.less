@@ -119,6 +119,34 @@ body {
   }
 }
 
+.mc-title {
+  margin: 50px 0;
+
+  .big {
+    font-size: 36px;
+    color: @primaryColor;
+    text-shadow: 3px 5px 5px rgba(0,0,0,0.2);
+  }
+
+  .desc {
+    position: relative;
+    font-size: 18px;
+    margin-left: 20px;
+  }
+
+  .line {
+    position: absolute;
+    top: -17px;
+    left: -23px;
+    border-left: 2px solid @primaryColor;
+    transform: rotate(38deg);
+    background-color: white;
+    display: block;
+    width: 15px;
+    height: 58px;
+  }
+}
+
 .more-partner {
   margin: 30px 0;
   height: 160px;
@@ -139,9 +167,36 @@ body {
 }
 
 .patFooter{
+  position: relative;
   width: 100%;
   height: 600px;
+  margin-top: 30px;
+  padding-top: 80px;
   color: white;
   background-color: #333;
 
+  h3 {
+    font-size: 18px;
+    color: white;
+    margin-top: 58px;
+  }
+
+  .contact-more {
+    margin-top: 38px;
+
+    a{
+      margin-right: 20px;
+    }
+  }
 }
+
+.footnote {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: #555;
+  line-height: 38px;
+  text-align: center;
+}
+

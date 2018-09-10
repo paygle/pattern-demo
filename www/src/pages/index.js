@@ -48,25 +48,31 @@ class Index extends React.Component {
         </div>
 
         <div className="m-content">
-          <div className="mc-title">服务项目</div>
+          <div className="mc-title">
+            <span className="big">SERVICE</span>
+            <span className="desc">
+              <i className="line"></i>
+              服务项目
+            </span>
+          </div>
           <Row gutter={16}>
             <Col span={6}>
               <PatCard
-                imgrc={'/static/inter.png'}
+                imgrc={'/static/web.png'}
                 title={'网站设计开发WEB'}
                 content={'高端品牌网站设计/电商平台建设/营销类网站/响应式网页设计/手机网页开发'}
                 />
             </Col>
             <Col span={6}>
               <PatCard
-                imgrc={'/static/inter.png'}
+                imgrc={'/static/app.png'}
                 title={'移动应用开发APP'}
                 content={'iOS/Android/微信公众平台 APP交互设计、视觉设计、HTML5开发、功能定制开发'}
                 />
             </Col>
             <Col span={6}>
               <PatCard
-                imgrc={'/static/inter.png'}
+                imgrc={'/static/ui.png'}
                 title={'UI/UX设计DESIGN'}
                 content={'图形界面设计/交互设计/用户测试研究/用户体验设计'}
                 />
@@ -102,7 +108,13 @@ class Index extends React.Component {
         </div>
 
         <div className="m-content">
-          <div className="mc-title">案例作品</div>
+          <div className="mc-title">
+            <span className="big">CASE</span>
+            <span className="desc">
+              <i className="line"></i>
+              案例作品
+            </span>
+          </div>
           <Row gutter={16}>
             {
               casusData.map((item)=>
@@ -135,16 +147,22 @@ class Index extends React.Component {
         </div>
 
         <div className="m-content">
-          <div className="mc-title">关于我们</div>
-            <div className="about-text">
-                AB模板网，成立于2012年，由一群有着创新精神和极客精神的年轻人组成。<br/>
-                为众多企业提供了品牌创意策划、线上形象设计以及产品开发服务。我们喜爱创新，热衷挑战。对每个项目<br/>
-                的设计研发我们都投入很大的精力与心血，并准备着为一个好的创意通宵达旦。
-            </div>
-            <div className="link-center">
-              <Link to="/about" className="link-more">查看更多</Link>
-            </div>
-            <PatCarousel/>
+          <div className="mc-title">
+            <span className="big">ABOUT</span>
+            <span className="desc">
+              <i className="line"></i>
+              关于我们
+            </span>
+          </div>
+          <div className="about-text">
+              Pattern模板网，成立于2018年，由一群有着创新精神和极客精神的年轻人组成。<br/>
+              为众多企业提供了品牌创意策划、线上形象设计以及产品开发服务。我们喜爱创新，热衷挑战。对每个项目<br/>
+              的设计研发我们都投入很大的精力与心血，并准备着为一个好的创意通宵达旦。
+          </div>
+          <div className="link-center">
+            <Link to="/about" className="link-more">查看更多</Link>
+          </div>
+          <PatCarousel/>
         </div>
       </>
     )

@@ -1,10 +1,11 @@
 import React from 'react'
-// import CSSModules from 'react-css-modules' // 免去多写一个styles前缀
-// import styles from './footer.less'
+import CSSModules from 'react-css-modules' // 免去多写一个styles前缀
+import styles from './footer.less'
 import {
   Row, Col, Form, Icon, Input, Button, Checkbox
  } from 'antd'
 
+const { TextArea } = Input;
 const FormItem = Form.Item
 
 class submitForm extends React.Component {
@@ -20,42 +21,55 @@ class submitForm extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const iconStyle = { color: 'rgba(0,0,0,.25)' }
 
     return (
-    <Form onSubmit={this.handleSubmit} className="login-form">
-      <FormItem>
-        {getFieldDecorator('userName', {
-          rules: [{ required: true, message: 'Please input your username!' }],
-        })(
-          <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
-        )}
-      </FormItem>
-      <FormItem>
-        {getFieldDecorator('password', {
-          rules: [{ required: true, message: 'Please input your Password!' }],
-        })(
-          <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
-        )}
-      </FormItem>
-      <FormItem>
-        {getFieldDecorator('remember', {
-          valuePropName: 'checked',
-          initialValue: true,
-        })(
-          <Checkbox>Remember me</Checkbox>
-        )}
-        <a className="login-form-forgot" href="">Forgot password</a>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
-        </Button>
-        Or <a href="">register now!</a>
-      </FormItem>
+    <Form onSubmit={this.handleSubmit} styleName="contactForm">
+      <Row gutter={24}>
+        <Col span={12}>
+          <FormItem>
+            {getFieldDecorator('userName', {
+              rules: [{ required: true, message: '请输入姓名！' }],
+            })(
+              <Input size="large" prefix={<Icon type="user" style={iconStyle} />} placeholder="姓名" />
+            )}
+          </FormItem>
+        </Col>
+        <Col span={12}>
+          <FormItem>
+            {getFieldDecorator('phone', {
+              rules: [{ required: true, message: '请输入手机号码！' }],
+            })(
+              <Input size="large" prefix={<Icon type="phone" style={iconStyle} />} placeholder="手机" />
+            )}
+          </FormItem>
+        </Col>
+        <Col span={24}>
+          <FormItem>
+            {getFieldDecorator('company', {})(
+              <Input size="large" prefix={<Icon type="team" style={iconStyle} />} placeholder="公司" />
+            )}
+          </FormItem>
+        </Col>
+        <Col span={24}>
+          <FormItem>
+            {getFieldDecorator('requirement', {
+              rules: [{ required: true, message: '请填写合作需求！' }],
+            })(
+              <TextArea autosize={{minRows: 6}} placeholder="合作需求" />
+            )}
+          </FormItem>
+        </Col>
+        <Col span={24}>
+          <Button type="primary" styleName="btnpdlr20" size="large" htmlType="submit" className="submit-button">提交</Button>
+        </Col>
+      </Row>
     </Form>
     )
   }
 }
 
-const WrappedSubmitForm = Form.create()(submitForm)
+const WrappedSubmitForm = Form.create()(CSSModules(submitForm, styles))
 
 class Footer extends React.Component {
 
@@ -76,13 +90,17 @@ class Footer extends React.Component {
               一次需求提交或许正是成就一个出色产品的开始。<br/>
               欢迎填写表格或发送合作邮件至：848778591@qq.com
             </div>
-            <h3>Pattern模版网仿站业务部</h3>
+            <h3>Pattern模版 - 网仿站业务部</h3>
             <p>848778591</p>
             <p>邮箱：848778591@qq.com</p>
             <p>地址：广东省广州市天河区棠下</p>
             <div className="contact-more">
-              <a href="/">qq</a>
-              <a href="/">微信</a>
+              <a target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=848778591&site=qq&menu=yes">
+                <img src="/static/qq.png" />
+              </a>
+              <a href="#">
+                <img src="/static/weixin.png" />
+              </a>
             </div>
           </Col>
           <Col span={12}>
@@ -90,10 +108,13 @@ class Footer extends React.Component {
           </Col>
         </Row>
       </div>
+      <div className="footnote">
+        Copyright © 2017-2018 Www.pattern.cn. pattern模板网 版权所有　粤ICP备11047180号-6
+      </div>
     </div>
     )
   }
 
 }
 
-export default Footer // CSSModules(Footer, styles)
+export default CSSModules(Footer, styles)
