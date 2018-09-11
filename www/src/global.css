@@ -7,6 +7,21 @@ body,
 body {
   margin: 0;
 }
+/* Header */
+.patHeader {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: 10px 20px;
+}
+.patHeader::after {
+  clear: right;
+}
+.patHeader .isShrink {
+  padding: 3px 20px;
+}
 /* main body style */
 .m-banner {
   width: 100%;

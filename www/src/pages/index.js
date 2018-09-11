@@ -10,7 +10,6 @@ class Index extends React.Component {
 
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -48,7 +47,7 @@ class Index extends React.Component {
         </div>
 
         <div className="m-content">
-          <div className="mc-title">
+          <div id="domIdService" className="mc-title">
             <span className="big">SERVICE</span>
             <span className="desc">
               <i className="line"></i>
@@ -108,7 +107,7 @@ class Index extends React.Component {
         </div>
 
         <div className="m-content">
-          <div className="mc-title">
+          <div id="domIdCasus" className="mc-title">
             <span className="big">CASE</span>
             <span className="desc">
               <i className="line"></i>
@@ -147,7 +146,7 @@ class Index extends React.Component {
         </div>
 
         <div className="m-content">
-          <div className="mc-title">
+          <div id="domIdAbout" className="mc-title">
             <span className="big">ABOUT</span>
             <span className="desc">
               <i className="line"></i>

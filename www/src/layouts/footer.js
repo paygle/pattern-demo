@@ -81,7 +81,7 @@ class Footer extends React.Component {
   render() {
 
     return (
-    <div className="patFooter">
+    <div id="domIdContact" className="patFooter">
       <div className="m-content">
         <Row gutter={16}>
           <Col span={12}>

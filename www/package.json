@@ -9,6 +9,8 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "add-dom-event-listener": "^1.0.2",
+    "classnames": "^2.2.6",
     "raf": "^3.4.0",
     "react-css-modules": "^4.7.7"
   },
