@@ -3,16 +3,11 @@ import React from 'react';
 
 class Casus extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
     return (
     <>
     <div className="m-banner">
-      <div className="bg-img"><img src="/static/bg234.jpg" /></div>
+      <div className="bg-img"><img src="/static/bg234.jpg" alt=""/></div>
     </div>
       Casus-wrapper
     </>

@@ -1,15 +1,14 @@
-import { Component, createRef } from 'react';
+import { Component, createRef } from 'react'
+import { connect } from 'dva'
+import raf from 'raf'
+import zhCN from 'antd/lib/locale-provider/zh_CN'
 import Header from './header'
 import Footer from './footer'
 import withRouter from 'umi/withRouter'
-import { connect } from 'dva'
-import zhCN from 'antd/lib/locale-provider/zh_CN';
-import getScroll from '../utils/getScroll';
+import getScroll from '../utils/getScroll'
 import addEventListener from '../utils/addEventListener'
-import { bindFuntion } from './../utils/_util';
-import raf from 'raf'
+import { bindFuntion } from '../utils/_util'
 import { LocaleProvider } from 'antd'
-
 
 // 前半段从0开始加速，后半段减速到0的缓动
 const easeInOutCubic = (t, b, c, d) => {
@@ -23,9 +22,10 @@ class Layout extends Component {
     super(props)
     this.layRef = createRef()
     this.scrollEvent = null
+    this.isDomReady = false
     this.state = {
-      isDomReady: false,
-      posIstop: true
+      posIstop: true,
+      posIsNews: false
     }
     bindFuntion(this, ['scrollIndexHandler', 'scrollHander'])
   }
@@ -38,10 +38,8 @@ class Layout extends Component {
   }
 
   scrollIndexHandler(domId) {
-    debugger
-    const { isDomReady } = this.state
-    if (isDomReady) {
 
+    if (this.isDomReady) {
       const idDom = document.getElementById(domId || 'root')
       const startTop = getScroll(window, true)
       const endTop = idDom.offsetTop
@@ -62,16 +60,17 @@ class Layout extends Component {
   }
   // 滚动后附带效果处理
   scrollHander() {
+    const { dispatch } = this.props
     const top = getScroll(window, true)
-    if (top > 50) {
-      this.setState({posIstop: false})
-    } else {
-      this.setState({posIstop: true})
-    }
+    const newsTop = document.getElementById('domIdNews').offsetTop
+
+    top > 50 ? this.setState({posIstop: false}) : this.setState({posIstop: true})
+    const isNewspos = top > newsTop - window.innerHeight
+    dispatch({type: 'globals/newsPosi', payload: isNewspos})
   }
 
   componentDidMount() {
-    this.state.isDomReady = true;
+    this.isDomReady = true;
     this.scrollEvent = addEventListener(window, 'scroll', this.scrollHander)
   }
 
@@ -107,7 +106,7 @@ class Layout extends Component {
 
 // 绑定存储属性
 const mapStateToProps = ({globals}) => {
-  return { position: globals.position };
+  return { isNewsPOSI: globals.isNewsPOSI  };
 };
 
 export default withRouter(connect(mapStateToProps)(Layout))

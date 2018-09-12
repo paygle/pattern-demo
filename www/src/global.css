@@ -12,6 +12,7 @@ body {
   position: fixed;
   top: 0;
   z-index: 99;
+  transition: .4s;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   padding: 10px 20px;
@@ -19,8 +20,52 @@ body {
 .patHeader::after {
   clear: right;
 }
-.patHeader .isShrink {
-  padding: 3px 20px;
+.menus {
+  float: right;
+}
+.menus > span,
+.menus > a {
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 60px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 7px 25px;
+}
+.menus > span:hover,
+.menus > a:hover {
+  color: rgba(7, 182, 243, 0.8);
+}
+.menus > .contact {
+  background-color: rgba(7, 182, 243, 0.7);
+  border-radius: 30px;
+}
+.menus > .contact:hover {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#root .is-shrink {
+  transition: .4s;
+  padding: 0 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+#root .is-shrink > a {
+  transition: .4s;
+  height: 50px;
+}
+#root .is-shrink > a img {
+  transition: .4s;
+}
+#root .is-shrink .menus > span,
+#root .is-shrink .menus > a {
+  transition: .4s;
+  line-height: 50px;
+}
+#root .is-shrink > div {
+  height: 50px;
+}
+#root .is-shrink div > [role=moveto],
+#root .is-shrink div > [role=routeto] {
+  color: #333;
 }
 /* main body style */
 .m-banner {
@@ -44,18 +89,28 @@ body {
   bottom: 0;
 }
 .news-more {
-  position: relative;
   color: #fff;
   height: 180px;
   margin: 80px 0;
   background-color: #333;
 }
+.news-more .m-content {
+  position: relative;
+}
 .news-more .rectFr {
+  transition: .4s;
+  transform: rotate3d(1, 2, 3, 720deg);
   position: absolute;
   top: -50px;
+  left: -100%;
   width: 175px;
   height: 275px;
   border: 4px solid #1eb9ee;
+}
+.news-more .rectFr.is-set {
+  transition: .7s;
+  transform: rotate3d(0, 0, 0, 0deg);
+  left: 0;
 }
 .news-more .news-title,
 .news-more .acticle-titile {

@@ -3,11 +3,6 @@ import React from 'react';
 
 class CasusDeatial extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
     return (
     <div className="casus-deatial-wrapper">

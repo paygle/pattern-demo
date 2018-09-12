@@ -9,6 +9,12 @@ li {
   width: 100%;
   margin-top: 30px;
 }
+.PatCarousel .photoWrapper > li.actived {
+  transform: scale(1);
+  z-index: 999;
+  height: 259px;
+  width: 388px;
+}
 .line {
   position: absolute;
   bottom: 0;
@@ -24,6 +30,8 @@ li {
   margin: 0 auto;
 }
 .photoWrapper > li {
+  transition: .4s;
+  transform: scale(0.7);
   position: absolute;
   display: list-item;
 }

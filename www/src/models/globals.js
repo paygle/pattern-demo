@@ -1,14 +1,17 @@
 export default {
   namespace: 'globals',
   state: {
-    collapsed: false
+    isNewsPOSI: false
   },
 
   // reducers 处理同步Action，可以看做是 state 的计算器。 同步异步Action的调用方式相同。
   reducers: {
-    add(state, { payload: globals }) {
+    newsPosi(state, { payload }) {
       // 保存数据到 state
-      return [...state, globals];
+      return {
+        ...state,
+        isNewsPOSI: payload,
+      };
     },
   },
 

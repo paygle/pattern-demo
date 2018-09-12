@@ -1,6 +1,9 @@
 import React from 'react';
 import Link from 'umi/link'
+import { connect } from 'dva'
+import classNames from 'classnames'
 import PatCard from '../components/pat-card'
+import PatLoadimg from '../components/pat-loadimg'
 import PatCarousel from '../components/pat-carousel'
 import {
   Row, Col
@@ -8,42 +11,45 @@ import {
 
 class Index extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    const { isNewsPOSI } = this.props
+    // 新闻框移动样式
+    const newsPosCls = classNames({
+      rectFr: true,
+      'is-set': isNewsPOSI
+    })
+
     // 案例数据
     const casusData = [
-      {id: 1, imgrc: '/static/workcase.jpg', titile: '案例展示一', url: '/'},
-      {id: 2, imgrc: '/static/workcase.jpg', titile: '案例展示二', url: '/'},
-      {id: 3, imgrc: '/static/workcase.jpg', titile: '案例展示三', url: '/'},
-      {id: 4, imgrc: '/static/workcase.jpg', titile: '案例展示四', url: '/'},
-      {id: 5, imgrc: '/static/workcase.jpg', titile: '案例展示五', url: '/'},
-      {id: 6, imgrc: '/static/workcase.jpg', titile: '案例展示六', url: '/'},
-      {id: 7, imgrc: '/static/workcase.jpg', titile: '案例展示七', url: '/'},
-      {id: 8, imgrc: '/static/workcase.jpg', titile: '案例展示八', url: '/'},
-      {id: 9, imgrc: '/static/workcase.jpg', titile: '案例展示九', url: '/'},
-      {id: 10, imgrc: '/static/workcase.jpg', titile: '案例展示十', url: '/'},
-      {id: 11, imgrc: '/static/workcase.jpg', titile: '案例展示十一', url: '/'},
-      {id: 12, imgrc: '/static/workcase.jpg', titile: '案例展示十二', url: '/'}
+      {id: 1, imgrc: '/static/workcase.jpg', title: '案例展示一', url: '/'},
+      {id: 2, imgrc: '/static/workcase.jpg', title: '案例展示二', url: '/'},
+      {id: 3, imgrc: '/static/workcase.jpg', title: '案例展示三', url: '/'},
+      {id: 4, imgrc: '/static/workcase.jpg', title: '案例展示四', url: '/'},
+      {id: 5, imgrc: '/static/workcase.jpg', title: '案例展示五', url: '/'},
+      {id: 6, imgrc: '/static/workcase.jpg', title: '案例展示六', url: '/'},
+      {id: 7, imgrc: '/static/workcase.jpg', title: '案例展示七', url: '/'},
+      {id: 8, imgrc: '/static/workcase.jpg', title: '案例展示八', url: '/'},
+      {id: 9, imgrc: '/static/workcase.jpg', title: '案例展示九', url: '/'},
+      {id: 10, imgrc: '/static/workcase.jpg', title: '案例展示十', url: '/'},
+      {id: 11, imgrc: '/static/workcase.jpg', title: '案例展示十一', url: '/'},
+      {id: 12, imgrc: '/static/workcase.jpg', title: '案例展示十二', url: '/'}
     ]
 
     // 合作伙伴数据
     const partnerData = [
-      {id: 1, imgrc: '/static/partner.png', titile: '合作者一', url: '/'},
-      {id: 2, imgrc: '/static/partner.png', titile: '合作者二', url: '/'},
-      {id: 3, imgrc: '/static/partner.png', titile: '合作者三', url: '/'},
-      {id: 4, imgrc: '/static/partner.png', titile: '合作者四', url: '/'},
-      {id: 5, imgrc: '/static/partner.png', titile: '合作者五', url: '/'},
-      {id: 6, imgrc: '/static/partner.png', titile: '合作者六', url: '/'}
+      {id: 1, imgrc: '/static/partner.png', title: '合作者一', url: '/'},
+      {id: 2, imgrc: '/static/partner.png', title: '合作者二', url: '/'},
+      {id: 3, imgrc: '/static/partner.png', title: '合作者三', url: '/'},
+      {id: 4, imgrc: '/static/partner.png', title: '合作者四', url: '/'},
+      {id: 5, imgrc: '/static/partner.png', title: '合作者五', url: '/'},
+      {id: 6, imgrc: '/static/partner.png', title: '合作者六', url: '/'}
     ]
 
     return (
       <>
         <div className="m-banner">
-          <div className="bg-img"><img src="/static/keybg.png" /></div>
-          <img className="bgt-img" src="/static/logo-x.png" />
+          <div className="bg-img"><img src="/static/keybg.png" alt=""/></div>
+          <img className="bgt-img" src="/static/logo-x.png" alt=""/>
         </div>
 
         <div className="m-content">
@@ -86,9 +92,9 @@ class Index extends React.Component {
           </Row>
         </div>
 
-        <div className="news-more">
+        <div id="domIdNews" className="news-more">
           <div className="m-content">
-            <div className="rectFr"></div>
+            <div className={newsPosCls}></div>
             <Row gutter={16}>
               <Col span={16}>
                 <span className="news-title">新闻动态</span>
@@ -118,10 +124,7 @@ class Index extends React.Component {
             {
               casusData.map((item)=>
                 <Col key={item.id} span={6}>
-                  <Link className="case" to={item.url}>
-                    <img src={item.imgrc}/>
-                    <p>{item.title}</p>
-                  </Link>
+                  <PatLoadimg option={item}/>
                 </Col>
               )
             }
@@ -168,4 +171,9 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+// 绑定存储属性
+const mapStateToProps = ({globals}) => {
+  return { isNewsPOSI: globals.isNewsPOSI  };
+};
+
+export default connect(mapStateToProps)(Index)

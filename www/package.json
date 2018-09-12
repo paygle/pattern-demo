@@ -11,6 +11,7 @@
   "dependencies": {
     "add-dom-event-listener": "^1.0.2",
     "classnames": "^2.2.6",
+    "element-closest": "^2.0.2",
     "raf": "^3.4.0",
     "react-css-modules": "^4.7.7"
   },
@@ -20,7 +21,7 @@
     "eslint-config-umi": "^0.1.5",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",

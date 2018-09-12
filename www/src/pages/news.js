@@ -3,16 +3,11 @@ import React from 'react';
 
 class News extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
     return (
     <>
     <div className="m-banner">
-      <div className="bg-img"><img src="/static/bg123.jpg" /></div>
+      <div className="bg-img"><img src="/static/bg123.jpg" alt=""/></div>
     </div>
       news-wrapper
     </>

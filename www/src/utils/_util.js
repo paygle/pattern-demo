@@ -14,3 +14,18 @@ export const bindFuntion = (target, funcNames) => {
     })
   }
 }
+
+/**
+ * 给DOM添加样式
+ * @param {Object} dom  需要添加样式的DOM结点
+ * @param {Object} StylesObject 需要添加的样式
+ */
+export const assignStyles = (dom, StylesObject) => {
+  if (dom && StylesObject) {
+    for (let p in StylesObject) {
+      if (StylesObject.hasOwnProperty(p) && dom.style.hasOwnProperty(p)) {
+        dom.style[p] = StylesObject[p]
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import CSSModules from 'react-css-modules' // 免去多写一个styles前缀
 import styles from './footer.less'
 import {
-  Row, Col, Form, Icon, Input, Button, Checkbox
+  Row, Col, Form, Icon, Input, Button
  } from 'antd'
 
 const { TextArea } = Input;
@@ -73,11 +73,6 @@ const WrappedSubmitForm = Form.create()(CSSModules(submitForm, styles))
 
 class Footer extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
 
     return (
@@ -96,10 +91,10 @@ class Footer extends React.Component {
             <p>地址：广东省广州市天河区棠下</p>
             <div className="contact-more">
               <a target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=848778591&site=qq&menu=yes">
-                <img src="/static/qq.png" />
+                <img src="/static/qq.png" alt="" />
               </a>
               <a href="#">
-                <img src="/static/weixin.png" />
+                <img src="/static/weixin.png" alt="" />
               </a>
             </div>
           </Col>
