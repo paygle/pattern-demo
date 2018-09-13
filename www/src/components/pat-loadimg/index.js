@@ -31,7 +31,6 @@ class PatLoadimg extends React.Component {
       if (!this.imgParentA || !this.imgParentRow) {
         this.imgParentCol = this.imgRef.current.closest('div.ant-col-6')
         this.imgParentRow = this.imgRef.current.closest('div.ant-row')
-        console.log('load:',this.imgParentCol , this.imgParentRow)
       }
 
       const top = getScroll(window, true)

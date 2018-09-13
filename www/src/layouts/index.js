@@ -32,7 +32,6 @@ class Layout extends Component {
 
 
   setScrollTop(value) {
-    console.log('setTop: ', value)
     document.body.scrollTop = value;
     document.documentElement.scrollTop = value;
   }
@@ -44,11 +43,12 @@ class Layout extends Component {
       const startTop = getScroll(window, true)
       const endTop = idDom.offsetTop
       const startTime = Date.now();
+
       const frameFunc = () => {
         const timestamp = Date.now();
         const time = timestamp - startTime;
         this.setScrollTop(easeInOutCubic(time, startTop, endTop - startTop, 450));
-        console.log('Time: ', time)
+
         if (time < 450) {
           raf(frameFunc);
         } else {

@@ -240,3 +240,45 @@ body {
   line-height: 38px;
   text-align: center;
 }
+.PatCarousel {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+.PatCarousel .photoWrapper > li.actived {
+  transform: scale(1);
+  z-index: 99;
+  height: 259px;
+}
+.photoWrapper {
+  position: relative;
+  width: 950px;
+  height: 260px;
+  margin: 0 auto;
+}
+.photoWrapper li {
+  position: absolute;
+  display: list-item;
+  transition: .5s;
+  transform: scale(0.8);
+}
+.photoWrapper li::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  left: 3px;
+  bottom: -20px;
+  display: block;
+  height: 29px;
+  width: 98%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
+}
+.photoWrapper li.behind {
+  transform: scale(0.6);
+}
+.photoWrapper img {
+  height: 100%;
+}

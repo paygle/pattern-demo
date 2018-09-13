@@ -31,7 +31,6 @@ class Header extends React.Component {
   render() {
     const {location, scrollHandler, posIstop} = this.props
     const scrollStyl = classNames({patHeader:true, 'is-shrink': !posIstop})
-    console.log('istop', posIstop)
 
     return (
       <div className={scrollStyl}>

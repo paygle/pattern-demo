@@ -6,39 +6,12 @@ ul, li {
   list-style: none;
 }
 
-.PatCarousel {
-  position: relative;
-  width: 100%;
-  margin-top: 30px;
-
-  .photoWrapper > li.actived {
-    transform: scale(1);
-    z-index: 999;
-    height: 259px;
-    width: 388px;
-  }
-}
-
 .line {
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: 10%;
   width: 80%;
   height: 142px;
   border: 4px solid @primaryColor;
-}
-
-.photoWrapper {
-  position: relative;
-  width: 70%;
-  height: 260px;
-  margin: 0 auto;
-
-  & > li {
-    transition: .4s;
-    transform: scale(0.7);
-    position: absolute;
-    display: list-item;
-  }
 }
 
