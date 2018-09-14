@@ -62,11 +62,14 @@ class Layout extends Component {
   scrollHander() {
     const { dispatch } = this.props
     const top = getScroll(window, true)
-    const newsTop = document.getElementById('domIdNews').offsetTop
+    const newsTopDom = document.getElementById('domIdNews')
 
-    top > 50 ? this.setState({posIstop: false}) : this.setState({posIstop: true})
-    const isNewspos = top > newsTop - window.innerHeight
-    dispatch({type: 'globals/newsPosi', payload: isNewspos})
+    if (newsTopDom) {
+      const newsTop = newsTopDom.offsetTop
+      top > 50 ? this.setState({posIstop: false}) : this.setState({posIstop: true})
+      const isNewspos = top > newsTop - window.innerHeight
+      dispatch({type: 'globals/newsPosi', payload: isNewspos})
+    }
   }
 
   componentDidMount() {

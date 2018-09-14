@@ -29,3 +29,22 @@ export const assignStyles = (dom, StylesObject) => {
     }
   }
 }
+/**
+ * 合并一个或多个对象
+ * @param {*} target 目标对象
+ */
+export const mergeObject = function(target) {
+  if (target instanceof Object) {
+    let args = [].slice.call(arguments)
+    for (let k = 1; k < args.length; k++) {
+      if (args[k] instanceof Object) {
+        for (let p in args[k]) {
+          if (args[k].hasOwnProperty(p)) {
+            target[p] = args[k][p]
+          }
+        }
+      }
+    }
+  }
+  return target
+}
