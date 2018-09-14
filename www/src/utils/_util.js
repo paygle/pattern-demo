@@ -23,7 +23,7 @@ export const bindFuntion = (target, funcNames) => {
 export const assignStyles = (dom, StylesObject) => {
   if (dom && StylesObject) {
     for (let p in StylesObject) {
-      if (StylesObject.hasOwnProperty(p) && dom.style.hasOwnProperty(p)) {
+      if (StylesObject.hasOwnProperty(p)) {
         dom.style[p] = StylesObject[p]
       }
     }

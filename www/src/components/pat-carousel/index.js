@@ -116,6 +116,7 @@ class PatCarousel extends React.Component {
               mergeObject(imgs[i], {actived: false, isLeft: false, isRight: false})
             }
           }
+          break;
         }
       }
 
