@@ -45,6 +45,7 @@ class PatLoadimg extends React.Component {
 
   componentDidMount() {
     this.scrollEvent = addEventListener(window, 'scroll', this.scrollHander)
+    this.scrollHander()
   }
 
   componentWillUnmount() {

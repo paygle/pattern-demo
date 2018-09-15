@@ -104,7 +104,7 @@ class Footer extends React.Component {
         </Row>
       </div>
       <div className="footnote">
-        Copyright © 2017-2018 Www.pattern.cn. pattern模板网 版权所有　粤ICP备11047180号-6
+        Copyright © 2017-2018 Www.pattern.cn. pattern模板网 版权所有
       </div>
     </div>
     )

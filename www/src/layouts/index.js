@@ -25,7 +25,7 @@ class Layout extends Component {
     this.isDomReady = false
     this.state = {
       posIstop: true,
-      posIsNews: false
+      posIsBlog: false
     }
     bindFuntion(this, ['scrollIndexHandler', 'scrollHander'])
   }
@@ -38,8 +38,9 @@ class Layout extends Component {
 
   scrollIndexHandler(domId) {
 
-    if (this.isDomReady) {
-      const idDom = document.getElementById(domId || 'root')
+    const idDom = document.getElementById(domId || 'root')
+
+    if (this.isDomReady && idDom) {
       const startTop = getScroll(window, true)
       const endTop = idDom.offsetTop
       const startTime = Date.now();
@@ -62,13 +63,13 @@ class Layout extends Component {
   scrollHander() {
     const { dispatch } = this.props
     const top = getScroll(window, true)
-    const newsTopDom = document.getElementById('domIdNews')
+    const blogTopDom = document.getElementById('domIdBlog')
 
-    if (newsTopDom) {
-      const newsTop = newsTopDom.offsetTop
+    if (blogTopDom) {
+      const blogTop = blogTopDom.offsetTop
       top > 50 ? this.setState({posIstop: false}) : this.setState({posIstop: true})
-      const isNewspos = top > newsTop - window.innerHeight
-      dispatch({type: 'globals/newsPosi', payload: isNewspos})
+      const isBlogpos = top > blogTop - window.innerHeight
+      dispatch({type: 'globals/blogPosi', payload: isBlogpos})
     }
   }
 
@@ -109,7 +110,7 @@ class Layout extends Component {
 
 // 绑定存储属性
 const mapStateToProps = ({globals}) => {
-  return { isNewsPOSI: globals.isNewsPOSI  };
+  return { isBlogPOSI: globals.isBlogPOSI  };
 };
 
 export default withRouter(connect(mapStateToProps)(Layout))

@@ -12,27 +12,27 @@ import {
 class Index extends React.Component {
 
   render() {
-    const { isNewsPOSI } = this.props
+    const { isBlogPOSI } = this.props
     // 新闻框移动样式
-    const newsPosCls = classNames({
+    const blogPosCls = classNames({
       rectFr: true,
-      'is-set': isNewsPOSI
+      'is-set': isBlogPOSI
     })
 
     // 案例数据
     const casusData = [
-      {id: 1, imgrc: '/static/workcase.jpg', title: '案例展示一', url: '/'},
-      {id: 2, imgrc: '/static/workcase.jpg', title: '案例展示二', url: '/'},
-      {id: 3, imgrc: '/static/workcase.jpg', title: '案例展示三', url: '/'},
-      {id: 4, imgrc: '/static/workcase.jpg', title: '案例展示四', url: '/'},
-      {id: 5, imgrc: '/static/workcase.jpg', title: '案例展示五', url: '/'},
-      {id: 6, imgrc: '/static/workcase.jpg', title: '案例展示六', url: '/'},
-      {id: 7, imgrc: '/static/workcase.jpg', title: '案例展示七', url: '/'},
-      {id: 8, imgrc: '/static/workcase.jpg', title: '案例展示八', url: '/'},
-      {id: 9, imgrc: '/static/workcase.jpg', title: '案例展示九', url: '/'},
-      {id: 10, imgrc: '/static/workcase.jpg', title: '案例展示十', url: '/'},
-      {id: 11, imgrc: '/static/workcase.jpg', title: '案例展示十一', url: '/'},
-      {id: 12, imgrc: '/static/workcase.jpg', title: '案例展示十二', url: '/'}
+      {id: 1, imgrc: '/static/workcase.jpg', title: '案例展示一', url: '/casus-detail'},
+      {id: 2, imgrc: '/static/workcase.jpg', title: '案例展示二', url: '/casus-detail'},
+      {id: 3, imgrc: '/static/workcase.jpg', title: '案例展示三', url: '/casus-detail'},
+      {id: 4, imgrc: '/static/workcase.jpg', title: '案例展示四', url: '/casus-detail'},
+      {id: 5, imgrc: '/static/workcase.jpg', title: '案例展示五', url: '/casus-detail'},
+      {id: 6, imgrc: '/static/workcase.jpg', title: '案例展示六', url: '/casus-detail'},
+      {id: 7, imgrc: '/static/workcase.jpg', title: '案例展示七', url: '/casus-detail'},
+      {id: 8, imgrc: '/static/workcase.jpg', title: '案例展示八', url: '/casus-detail'},
+      {id: 9, imgrc: '/static/workcase.jpg', title: '案例展示九', url: '/casus-detail'},
+      {id: 10, imgrc: '/static/workcase.jpg', title: '案例展示十', url: '/casus-detail'},
+      {id: 11, imgrc: '/static/workcase.jpg', title: '案例展示十一', url: '/casus-detail'},
+      {id: 12, imgrc: '/static/workcase.jpg', title: '案例展示十二', url: '/casus-detail'}
     ]
 
     // 合作伙伴数据
@@ -92,21 +92,21 @@ class Index extends React.Component {
           </Row>
         </div>
 
-        <div id="domIdNews" className="news-more">
+        <div id="domIdBlog" className="blog-more">
           <div className="m-content">
-            <div className={newsPosCls}></div>
+            <div className={blogPosCls}></div>
             <Row gutter={16}>
               <Col span={16}>
-                <span className="news-title">新闻动态</span>
-                <a className="acticle-titile" href="/">
+                <span className="blog-title">博客动态</span>
+                <Link className="acticle-titile" to="/blog-detail">
                   <span className="date">
                     <em>09-04</em><i></i><b>2018</b>
                   </span>
                   <span>怎么样制作网页 这些技巧要知晓</span>
-                </a>
+                </Link>
               </Col>
               <Col span={8} className="lkmore">
-                <Link to="/news" className="link-more">更多内容</Link>
+                <Link to="/blog" className="link-more">更多内容</Link>
               </Col>
             </Row>
           </div>
@@ -173,7 +173,7 @@ class Index extends React.Component {
 
 // 绑定存储属性
 const mapStateToProps = ({globals}) => {
-  return { isNewsPOSI: globals.isNewsPOSI  };
+  return { isBlogPOSI: globals.isBlogPOSI  };
 };
 
 export default connect(mapStateToProps)(Index)
