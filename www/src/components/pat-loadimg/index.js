@@ -3,9 +3,9 @@ import Link from 'umi/link'
 import 'element-closest'
 import classNames from 'classnames'
 import styles from './index.less'
-import getScroll from '../../utils/getScroll'
-import { bindFuntion } from '../../utils/_util'
-import addEventListener from '../../utils/addEventListener'
+import getScroll from 'src/utils/getScroll'
+import { bindFuntion } from 'src/utils/_util'
+import addEventListener from 'src/utils/addEventListener'
 
 class PatLoadimg extends React.Component {
 

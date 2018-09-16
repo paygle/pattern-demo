@@ -1,5 +1,5 @@
 import React, {createRef} from 'react'
-import { bindFuntion, assignStyles, mergeObject } from '../../utils/_util'
+import { bindFuntion, assignStyles, mergeObject } from 'src/utils/_util'
 import styles from './index.less'
 
 let timeoutHaner

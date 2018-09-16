@@ -5,9 +5,9 @@ import zhCN from 'antd/lib/locale-provider/zh_CN'
 import Header from './header'
 import Footer from './footer'
 import withRouter from 'umi/withRouter'
-import getScroll from '../utils/getScroll'
-import addEventListener from '../utils/addEventListener'
-import { bindFuntion } from '../utils/_util'
+import getScroll from 'src/utils/getScroll'
+import addEventListener from 'src/utils/addEventListener'
+import { bindFuntion } from 'src/utils/_util'
 import { LocaleProvider } from 'antd'
 
 // 前半段从0开始加速，后半段减速到0的缓动

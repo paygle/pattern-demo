@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'umi/link'
-import styles from './blog.less'
+import styles from './index.less'
 import { Row, Col, Pagination } from 'antd'
 
 class Blog extends React.Component {
@@ -11,21 +11,21 @@ class Blog extends React.Component {
       acticles: [
         {
           id: 'at1',
-          url: '/blog-detail',
+          url: '/blog/detail',
           date: '2018-09-15',
           title: '商城网站建设 配色类别值的注意',
           content: '色彩，为我们的日常生活添加了很多的乐趣和生活情调。每天早上的日出，由灰中带红，红中有亮的色调组成，看到日出，我们的心情也会很好的。可以说，色彩在我们的日常生活中发挥着重要的作用。对于网站建设来说，色彩的重要性更是厉害。而在商城网站建设中，色彩可以分为一种色彩，两种色彩或者是一整个色系的应用，下面，我们就来具体的学习一下。'
         },
         {
           id: 'at2',
-          url: '/blog-detail',
+          url: '/blog/detail',
           date: '2018-09-15',
           title: '商城网站建设 配色类别值的注意',
           content: '色彩，为我们的日常生活添加了很多的乐趣和生活情调。每天早上的日出，由灰中带红，红中有亮的色调组成，看到日出，我们的心情也会很好的。可以说，色彩在我们的日常生活中发挥着重要的作用。对于网站建设来说，色彩的重要性更是厉害。而在商城网站建设中，色彩可以分为一种色彩，两种色彩或者是一整个色系的应用，下面，我们就来具体的学习一下。'
         },
         {
           id: 'at3',
-          url: '/blog-detail',
+          url: '/blog/detail',
           date: '2018-09-15',
           title: '商城网站建设 配色类别值的注意',
           content: '色彩，为我们的日常生活添加了很多的乐趣和生活情调。每天早上的日出，由灰中带红，红中有亮的色调组成，看到日出，我们的心情也会很好的。可以说，色彩在我们的日常生活中发挥着重要的作用。对于网站建设来说，色彩的重要性更是厉害。而在商城网站建设中，色彩可以分为一种色彩，两种色彩或者是一整个色系的应用，下面，我们就来具体的学习一下。'

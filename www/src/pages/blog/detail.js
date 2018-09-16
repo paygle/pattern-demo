@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'umi/link';
-import styles from './blog-detail.less'
+import styles from './detail.less'
 
 class BlogDetail extends React.Component {
 

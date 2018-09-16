@@ -2,9 +2,9 @@ import React from 'react';
 import Link from 'umi/link'
 import { connect } from 'dva'
 import classNames from 'classnames'
-import PatCard from '../components/pat-card'
-import PatLoadimg from '../components/pat-loadimg'
-import PatCarousel from '../components/pat-carousel'
+import PatCard from 'src/components/pat-card'
+import PatLoadimg from 'src/components/pat-loadimg'
+import PatCarousel from 'src/components/pat-carousel'
 import {
   Row, Col
  } from 'antd'
@@ -21,18 +21,18 @@ class Index extends React.Component {
 
     // 案例数据
     const casusData = [
-      {id: 1, imgrc: '/static/workcase.jpg', title: '案例展示一', url: '/casus-detail'},
-      {id: 2, imgrc: '/static/workcase.jpg', title: '案例展示二', url: '/casus-detail'},
-      {id: 3, imgrc: '/static/workcase.jpg', title: '案例展示三', url: '/casus-detail'},
-      {id: 4, imgrc: '/static/workcase.jpg', title: '案例展示四', url: '/casus-detail'},
-      {id: 5, imgrc: '/static/workcase.jpg', title: '案例展示五', url: '/casus-detail'},
-      {id: 6, imgrc: '/static/workcase.jpg', title: '案例展示六', url: '/casus-detail'},
-      {id: 7, imgrc: '/static/workcase.jpg', title: '案例展示七', url: '/casus-detail'},
-      {id: 8, imgrc: '/static/workcase.jpg', title: '案例展示八', url: '/casus-detail'},
-      {id: 9, imgrc: '/static/workcase.jpg', title: '案例展示九', url: '/casus-detail'},
-      {id: 10, imgrc: '/static/workcase.jpg', title: '案例展示十', url: '/casus-detail'},
-      {id: 11, imgrc: '/static/workcase.jpg', title: '案例展示十一', url: '/casus-detail'},
-      {id: 12, imgrc: '/static/workcase.jpg', title: '案例展示十二', url: '/casus-detail'}
+      {id: 1, imgrc: '/static/workcase.jpg', title: '案例展示一', url: '/casus/detail'},
+      {id: 2, imgrc: '/static/workcase.jpg', title: '案例展示二', url: '/casus/detail'},
+      {id: 3, imgrc: '/static/workcase.jpg', title: '案例展示三', url: '/casus/detail'},
+      {id: 4, imgrc: '/static/workcase.jpg', title: '案例展示四', url: '/casus/detail'},
+      {id: 5, imgrc: '/static/workcase.jpg', title: '案例展示五', url: '/casus/detail'},
+      {id: 6, imgrc: '/static/workcase.jpg', title: '案例展示六', url: '/casus/detail'},
+      {id: 7, imgrc: '/static/workcase.jpg', title: '案例展示七', url: '/casus/detail'},
+      {id: 8, imgrc: '/static/workcase.jpg', title: '案例展示八', url: '/casus/detail'},
+      {id: 9, imgrc: '/static/workcase.jpg', title: '案例展示九', url: '/casus/detail'},
+      {id: 10, imgrc: '/static/workcase.jpg', title: '案例展示十', url: '/casus/detail'},
+      {id: 11, imgrc: '/static/workcase.jpg', title: '案例展示十一', url: '/casus/detail'},
+      {id: 12, imgrc: '/static/workcase.jpg', title: '案例展示十二', url: '/casus/detail'}
     ]
 
     // 合作伙伴数据
@@ -98,7 +98,7 @@ class Index extends React.Component {
             <Row gutter={16}>
               <Col span={16}>
                 <span className="blog-title">博客动态</span>
-                <Link className="acticle-titile" to="/blog-detail">
+                <Link className="acticle-titile" to="/blog/detail">
                   <span className="date">
                     <em>09-04</em><i></i><b>2018</b>
                   </span>
