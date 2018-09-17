@@ -20,6 +20,7 @@ export default {
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
+      polyfills: ['ie10'],
       antd: true,
       dva: true,
       dynamicImport: true,
