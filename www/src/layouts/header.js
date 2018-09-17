@@ -33,7 +33,7 @@ class Header extends React.Component {
     return (
       <div className={scrollStyl}>
         <Link to="/" className="mlogo">
-          <img src="/static/logo.png" alt=""/>
+          <img src={`${BASE_URL}static/logo.png`} alt=""/>
         </Link>
         <div className="menus">
           {

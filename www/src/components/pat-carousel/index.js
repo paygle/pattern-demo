@@ -18,11 +18,11 @@ class PatCarousel extends React.Component {
     this.timeHandler = null
     this.state = {
       photos: [
-        {id: 'p1', imgrc: '/static/workcase.jpg'},
-        {id: 'p2', imgrc: '/static/workcase.jpg'},
-        {id: 'p3', imgrc: '/static/workcase.jpg'},
-        {id: 'p4', imgrc: '/static/workcase.jpg'},
-        {id: 'p5', imgrc: '/static/workcase.jpg'}
+        {id: 'p1', imgrc: 'static/workcase.jpg'},
+        {id: 'p2', imgrc: 'static/workcase.jpg'},
+        {id: 'p3', imgrc: 'static/workcase.jpg'},
+        {id: 'p4', imgrc: 'static/workcase.jpg'},
+        {id: 'p5', imgrc: 'static/workcase.jpg'}
       ]
     }
     bindFuntion(this, ['imgClickHandler', 'initImgs', 'runRotate', 'runCarousel'])
@@ -193,7 +193,7 @@ class PatCarousel extends React.Component {
         {
           this.state.photos.map((photo) =>
           <li id={`img${photo.id}`} onClick={(e) => this.imgClickHandler(photo.id)} key={photo.id}>
-            <img src={photo.imgrc} alt=""/>
+            <img src={BASE_URL + photo.imgrc} alt=""/>
           </li>)
         }
       </ul>

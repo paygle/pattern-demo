@@ -1,4 +1,8 @@
-import React from 'react'
+import React, {createRef} from 'react'
+import addEventListener from 'src/utils/addEventListener'
+import { bindFuntion } from 'src/utils/_util'
+import getScroll from 'src/utils/getScroll'
+import classNames from 'classnames'
 import CSSModules from 'react-css-modules' // 免去多写一个styles前缀
 import styles from './footer.less'
 import {
@@ -73,13 +77,52 @@ const WrappedSubmitForm = Form.create()(CSSModules(submitForm, styles))
 
 class Footer extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.footerRef = createRef()
+    this.scrollEvent = null
+    this.state = {
+      isActived: false
+    }
+    bindFuntion(this, ['scrollHander'])
+  }
+
+  // 滚动后附带效果处理
+  scrollHander() {
+
+    if (this.footerRef.current) {
+      const footer = this.footerRef.current
+      const top = getScroll(window, true)
+      const imgTop = footer.offsetTop
+      const isImgpos = top > imgTop - window.innerHeight
+      // this.setState({isLoading: isImgpos})
+      if (isImgpos) {
+        this.setState({isActived: true})
+      } else {
+        this.setState({isActived: false})
+      }
+    }
+  }
+
+  componentDidMount() {
+    this.scrollEvent = addEventListener(window, 'scroll', this.scrollHander)
+    this.scrollHander()
+  }
+
+  componentWillUnmount() {
+    if (this.scrollEvent) {
+      this.scrollEvent.remove();
+    }
+  }
+
   render() {
+    const loadStyl = classNames('m-content', {'is-actived': this.state.isActived})
 
     return (
-    <div id="domIdContact" className="patFooter">
-      <div className="m-content">
+    <div id="domIdContact" className="patFooter" ref={this.footerRef}>
+      <div className={loadStyl}>
         <Row gutter={16}>
-          <Col span={12}>
+          <Col span={12} className="footerLeft">
             <div className="mf-title">联系我们</div>
             <div className="mf-text">
               一次需求提交或许正是成就一个出色产品的开始。<br/>
@@ -91,14 +134,17 @@ class Footer extends React.Component {
             <p>地址：广东省广州市天河区棠下</p>
             <div className="contact-more">
               <a target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=848778591&site=qq&menu=yes">
-                <img src="/static/qq.png" alt="" />
+                <img src={`${BASE_URL}static/qq.png`} alt="" />
               </a>
               <a href="#">
-                <img src="/static/weixin.png" alt="" />
+                <img src={`${BASE_URL}static/weixin.png`} alt="" />
+                <div className="mywx">
+                  <img src={`${BASE_URL}static/mywx.jpg`} alt="" />
+                </div>
               </a>
             </div>
           </Col>
-          <Col span={12}>
+          <Col span={12} className="footerRight">
             <WrappedSubmitForm/>
           </Col>
         </Row>
@@ -112,4 +158,4 @@ class Footer extends React.Component {
 
 }
 
-export default CSSModules(Footer, styles)
+export default Footer

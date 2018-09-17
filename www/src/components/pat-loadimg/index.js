@@ -64,7 +64,7 @@ class PatLoadimg extends React.Component {
       <Link className={styles.warpper} to={option.url}>
         {
           isLoading ?
-          <><div className={styles.imgbox}><img src={option.imgrc} alt=""/></div>
+          <><div className={styles.imgbox}><img src={BASE_URL + option.imgrc} alt=""/></div>
           <p>{option.title}</p></>
           : ''
         }

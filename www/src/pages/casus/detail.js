@@ -9,7 +9,7 @@ class CasusDeatial extends React.Component {
       date: '2018-9-9',
       title: '案例展示一',
       describe: '这里是客户网的描述，在后台进行编辑，图片也在这里插入，自己注意排版，发布后要记得更新！！！这里是客户网的描述，在后台进行编辑，图片也在这里插入，自己注意排版，发布后要记得更新！！',
-      imgrc: '/static/case1.jpg'
+      imgrc: 'static/case1.jpg'
     }
     return (
     <>
@@ -19,7 +19,7 @@ class CasusDeatial extends React.Component {
       <div className="case-content">{casusData.describe}</div>
     </div>
     <div className="case-visit-web"><Link to="/">访问网站</Link></div>
-    <div className="m-width case-show-img"><img src={casusData.imgrc} alt=""/></div>
+    <div className="m-width case-show-img"><img src={BASE_URL + casusData.imgrc} alt=""/></div>
     </>
     )
   }

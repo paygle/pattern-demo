@@ -9,7 +9,7 @@ class About extends React.Component {
     return (
     <>
     <div className="m-banner">
-      <div className="bg-img"><img src="/static/bg345.jpg" alt=""/></div>
+      <div className="bg-img"><img src={`${BASE_URL}static/bg345.jpg`} alt=""/></div>
     </div>
     <div className="page-title">
       <div className="m-width" style={{position: 'relative'}}><span className="text">关于PATTRERN模板网</span></div>
@@ -18,7 +18,7 @@ class About extends React.Component {
       <Row gutter={16}>
         <Col span={16}>
           <div className="about-bg1">
-            <img src="/static/about1.png" alt=""/>
+            <img src={`${BASE_URL}static/about1.png`} alt=""/>
             <div className="about-desc1">
             pattern模板网成立于2018年 由一群有着创新精神和极客精神的年轻人组成。为众多企业提供了品牌创意策划、线上形象设计以及产品开发服务。
             </div>
@@ -44,7 +44,7 @@ class About extends React.Component {
         </Col>
         <Col span={8}>
           <div className="about-bg4">
-            <img src="/static/about2.gif" alt=""/>
+            <img src={`${BASE_URL}static/about2.gif`} alt=""/>
             <div className="about-desc4">
               <p>愿景</p>
               通过用户交互体验和技术的不断改善，让设计变得更加简易实用，我们会不停地前进，敢于创新，但不忘初衷。

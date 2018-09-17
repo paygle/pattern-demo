@@ -40,7 +40,7 @@ class Blog extends React.Component {
     return (
     <>
     <div className="m-banner">
-      <div className="bg-img"><img src="/static/bg123.jpg" alt=""/></div>
+      <div className="bg-img"><img src="static/bg123.jpg" alt=""/></div>
     </div>
     <div className="page-title">
       <div className="m-width" style={{position: 'relative'}}><span className="text">博客动态</span></div>

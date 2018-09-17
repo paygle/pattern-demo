@@ -223,6 +223,7 @@ body {
   margin: 0 auto;
 }
 .m-content .link-more {
+  position: relative;
   display: inline-block;
   width: 220px;
   height: 48px;
@@ -231,7 +232,50 @@ body {
   color: white;
   border-radius: 10px;
   margin: 30px 0;
+  border: none;
+  z-index: 1;
   background-color: #1eb9ee;
+  transition: background-color 0.3s, color 0.3s;
+}
+.m-content .link-more:hover {
+  display: inline-block;
+  width: 220px;
+  height: 48px;
+  border: none;
+  background-color: #333;
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+.m-content .link-more:hover span {
+  color: #1eb9ee;
+}
+.m-content .link-more:hover::before {
+  transform: scale3d(1, 1, 1);
+  opacity: 1;
+}
+.m-content .link-more.white:hover {
+  background-color: white !important;
+}
+.m-content .link-more span {
+  display: block;
+  font-size: 18px;
+  width: 100%;
+}
+.m-content .link-more::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #1eb9ee;
+  z-index: -1;
+  border-radius: inherit;
+  transform: scale3d(0.6, 0.6, 1);
+  opacity: 0;
+  transition: 0.3s, opacity 0.3s;
+  transition-timing-function: cubic-bezier(0.075, 0, 0.125, 1);
 }
 .mc-title {
   margin: 50px 0;
@@ -274,12 +318,36 @@ body {
 }
 .patFooter {
   position: relative;
+  overflow: hidden;
   width: 100%;
   height: 600px;
   margin-top: 30px;
   padding-top: 80px;
   color: white;
   background-color: #333;
+}
+.patFooter .mywx {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  width: 300px;
+  height: 300px;
+  display: none;
+}
+.patFooter .mywx img {
+  width: 100%;
+  height: 100%;
+}
+.patFooter .footerLeft,
+.patFooter .footerRight {
+  transition: .5s;
+  transition-timing-function: cubic-bezier(0, 0.86, 0.58, 0.94);
+}
+.patFooter .footerLeft {
+  transform: translateX(-50%);
+}
+.patFooter .footerRight {
+  transform: translateX(50%);
 }
 .patFooter h3 {
   font-size: 18px;
@@ -290,7 +358,22 @@ body {
   margin-top: 38px;
 }
 .patFooter .contact-more a {
+  position: relative;
   margin-right: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.patFooter .contact-more a:hover {
+  background-color: white;
+}
+.patFooter .contact-more a:hover .mywx {
+  display: block;
+}
+.patFooter .contact-more a img {
+  margin-top: -5px;
+  margin-left: -2px;
 }
 .patFooter .ant-input {
   color: #eee;
@@ -305,6 +388,10 @@ body {
 }
 .patFooter .ant-input::-ms-input-placeholder {
   color: #666;
+}
+.patFooter .is-actived .footerLeft,
+.patFooter .is-actived .footerRight {
+  transform: translateX(0);
 }
 .footnote {
   position: absolute;
@@ -378,9 +465,12 @@ body {
   height: 38px;
   text-align: center;
   line-height: 38px;
-  color: white;
+  color: #eee;
   background-color: #1eb9ee;
   border-radius: 8px;
+}
+.case-visit-web a:hover {
+  color: white;
 }
 .case-show-img {
   text-align: center;

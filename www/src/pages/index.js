@@ -21,35 +21,35 @@ class Index extends React.Component {
 
     // 案例数据
     const casusData = [
-      {id: 1, imgrc: '/static/workcase.jpg', title: '案例展示一', url: '/casus/detail'},
-      {id: 2, imgrc: '/static/workcase.jpg', title: '案例展示二', url: '/casus/detail'},
-      {id: 3, imgrc: '/static/workcase.jpg', title: '案例展示三', url: '/casus/detail'},
-      {id: 4, imgrc: '/static/workcase.jpg', title: '案例展示四', url: '/casus/detail'},
-      {id: 5, imgrc: '/static/workcase.jpg', title: '案例展示五', url: '/casus/detail'},
-      {id: 6, imgrc: '/static/workcase.jpg', title: '案例展示六', url: '/casus/detail'},
-      {id: 7, imgrc: '/static/workcase.jpg', title: '案例展示七', url: '/casus/detail'},
-      {id: 8, imgrc: '/static/workcase.jpg', title: '案例展示八', url: '/casus/detail'},
-      {id: 9, imgrc: '/static/workcase.jpg', title: '案例展示九', url: '/casus/detail'},
-      {id: 10, imgrc: '/static/workcase.jpg', title: '案例展示十', url: '/casus/detail'},
-      {id: 11, imgrc: '/static/workcase.jpg', title: '案例展示十一', url: '/casus/detail'},
-      {id: 12, imgrc: '/static/workcase.jpg', title: '案例展示十二', url: '/casus/detail'}
+      {id: 1, imgrc: 'static/workcase.jpg', title: '案例展示一', url: '/casus/detail'},
+      {id: 2, imgrc: 'static/workcase.jpg', title: '案例展示二', url: '/casus/detail'},
+      {id: 3, imgrc: 'static/workcase.jpg', title: '案例展示三', url: '/casus/detail'},
+      {id: 4, imgrc: 'static/workcase.jpg', title: '案例展示四', url: '/casus/detail'},
+      {id: 5, imgrc: 'static/workcase.jpg', title: '案例展示五', url: '/casus/detail'},
+      {id: 6, imgrc: 'static/workcase.jpg', title: '案例展示六', url: '/casus/detail'},
+      {id: 7, imgrc: 'static/workcase.jpg', title: '案例展示七', url: '/casus/detail'},
+      {id: 8, imgrc: 'static/workcase.jpg', title: '案例展示八', url: '/casus/detail'},
+      {id: 9, imgrc: 'static/workcase.jpg', title: '案例展示九', url: '/casus/detail'},
+      {id: 10, imgrc: 'static/workcase.jpg', title: '案例展示十', url: '/casus/detail'},
+      {id: 11, imgrc: 'static/workcase.jpg', title: '案例展示十一', url: '/casus/detail'},
+      {id: 12, imgrc: 'static/workcase.jpg', title: '案例展示十二', url: '/casus/detail'}
     ]
 
     // 合作伙伴数据
     const partnerData = [
-      {id: 1, imgrc: '/static/partner.png', title: '合作者一', url: '/'},
-      {id: 2, imgrc: '/static/partner.png', title: '合作者二', url: '/'},
-      {id: 3, imgrc: '/static/partner.png', title: '合作者三', url: '/'},
-      {id: 4, imgrc: '/static/partner.png', title: '合作者四', url: '/'},
-      {id: 5, imgrc: '/static/partner.png', title: '合作者五', url: '/'},
-      {id: 6, imgrc: '/static/partner.png', title: '合作者六', url: '/'}
+      {id: 1, imgrc: 'static/partner.png', title: '合作者一', url: '/'},
+      {id: 2, imgrc: 'static/partner.png', title: '合作者二', url: '/'},
+      {id: 3, imgrc: 'static/partner.png', title: '合作者三', url: '/'},
+      {id: 4, imgrc: 'static/partner.png', title: '合作者四', url: '/'},
+      {id: 5, imgrc: 'static/partner.png', title: '合作者五', url: '/'},
+      {id: 6, imgrc: 'static/partner.png', title: '合作者六', url: '/'}
     ]
 
     return (
       <>
         <div className="m-banner">
-          <div className="bg-img"><img src="/static/keybg.png" alt=""/></div>
-          <img className="bgt-img" src="/static/logo-x.png" alt=""/>
+          <div className="bg-img"><img src={`${BASE_URL}static/keybg.png`} alt=""/></div>
+          <img className="bgt-img" src={`${BASE_URL}static/logo-x.png`} alt=""/>
         </div>
 
         <div className="m-content">
@@ -63,28 +63,28 @@ class Index extends React.Component {
           <Row gutter={16}>
             <Col span={6}>
               <PatCard
-                imgrc={'/static/web.png'}
+                imgrc={`${BASE_URL}static/web.png`}
                 title={'网站设计开发WEB'}
                 content={'高端品牌网站设计/电商平台建设/营销类网站/响应式网页设计/手机网页开发'}
                 />
             </Col>
             <Col span={6}>
               <PatCard
-                imgrc={'/static/app.png'}
+                imgrc={`${BASE_URL}static/app.png`}
                 title={'移动应用开发APP'}
                 content={'iOS/Android/微信公众平台 APP交互设计、视觉设计、HTML5开发、功能定制开发'}
                 />
             </Col>
             <Col span={6}>
               <PatCard
-                imgrc={'/static/ui.png'}
+                imgrc={`${BASE_URL}static/ui.png`}
                 title={'UI/UX设计DESIGN'}
                 content={'图形界面设计/交互设计/用户测试研究/用户体验设计'}
                 />
             </Col>
             <Col span={6}>
               <PatCard
-                imgrc={'/static/inter.png'}
+                imgrc={`${BASE_URL}static/inter.png`}
                 title={'互联网平台建设Internet'}
                 content={'多操作系统多平台的应用软件交互设计、视觉设计、应用端开发服务'}
                 />
@@ -106,7 +106,7 @@ class Index extends React.Component {
                 </Link>
               </Col>
               <Col span={8} className="lkmore">
-                <Link to="/blog" className="link-more">更多内容</Link>
+                <Link to="/blog" className="link-more"><span>更多内容</span></Link>
               </Col>
             </Row>
           </div>
@@ -130,7 +130,7 @@ class Index extends React.Component {
             }
           </Row>
           <div className="link-center">
-            <Link to="/casus" className="link-more">更多案例</Link>
+            <Link to="/casus" className="link-more white"><span>更多案例</span></Link>
           </div>
         </div>
 
@@ -140,7 +140,7 @@ class Index extends React.Component {
               {
                 partnerData.map((item)=>
                   <Col key={item.id} span={4}>
-                    <img src={item.imgrc} alt={item.title}/>
+                    <img src={BASE_URL + item.imgrc} alt={item.title}/>
                   </Col>
                 )
               }
@@ -162,7 +162,7 @@ class Index extends React.Component {
               的设计研发我们都投入很大的精力与心血，并准备着为一个好的创意通宵达旦。
           </div>
           <div className="link-center">
-            <Link to="/about" className="link-more">查看更多</Link>
+            <Link to="/about" className="link-more white"><span>查看更多</span></Link>
           </div>
           <PatCarousel/>
         </div>
