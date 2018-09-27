@@ -9,7 +9,7 @@ export default {
 
   base: '/pattern/', // 部署到非根目录
 
-  // exportStatic: { htmlSuffix: true }, // 静态化选项
+  exportStatic: { htmlSuffix: true }, // 静态化选项
 
   // dynamicRoot: true, // 静态化到任何目录
 
